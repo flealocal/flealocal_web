@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="789593011">
+    <data-source source="LOCAL" name="FlealocalAPI dev" uuid="a562ec7d-d2ed-44b2-a1e9-c4a05221d2f9">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhostOrDatabaseIpAddress/myDatabaseName?useUnicode=yes&amp;characterEncoding=UTF-8</jdbc-url>
+      <user-name>user</user-name>
+      <user-password>dfdadfcbdfd9dfd9dfdddfc5dfd8dfce</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
