@@ -3,21 +3,21 @@ import grails.converters.JSON
 /**
  * Created by Nishant on 9/7/14.
  */
-class DeviceController {
+class UserController {
 
     def index(){
-        def devices  = Device.findAll()
+        def users  = User.findAll()
         withFormat {
-            json {render(devices as JSON)}
+            json {render(users as JSON)}
         }
     }
 
     def save(){
         def jsonObject = request.JSON
-        Device device = new Device(jsonObject)
-        device.save()
+        User user = new User(jsonObject)
+        user.save(failOnError: true)
         withFormat {
-            json {render(device as JSON)}
+            json {render(user as JSON)}
         }
 
     }
