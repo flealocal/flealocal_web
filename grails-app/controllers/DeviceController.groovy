@@ -13,7 +13,7 @@ class DeviceController {
     }
 
     def save(){
-        def jsonObject = request.JSON
+        def jsonObject = request.JSON.getAt("params")
         Device device = new Device(jsonObject)
         device.save()
         withFormat {

@@ -13,7 +13,7 @@ class UserController {
     }
 
     def save(){
-        def jsonObject = request.JSON
+        def jsonObject = request.JSON.getAt("params")
         User user = new User(jsonObject)
         user.save(failOnError: true)
         withFormat {

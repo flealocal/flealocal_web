@@ -1,6 +1,9 @@
+import grails.persistence.Entity
+
 /**
  * Created by Nishant on 9/7/14.
  */
+@Entity
 class Device {
 
     String authToken
@@ -20,6 +23,11 @@ class Device {
     String deviceId
     String optOut
     String appVersionName
+    User user
+    Date created = new Date()
+    Date modified = new Date()
+
+    static hasOne = {user:user}
 
 
     static constraints = {
@@ -41,6 +49,8 @@ class Device {
         hardwareDeviceModel nullable: true
         deviceId nullable: true
         optOut nullable: true
+        created nullable: false
+        modified nullable: false
 
     }
 

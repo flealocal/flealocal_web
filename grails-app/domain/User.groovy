@@ -9,14 +9,23 @@ class User {
     String loginType
     String authToken
     String gender
+    Date created = new Date()
+    Date modified = new Date()
+
+    static belongsTo = [Product]
+    static hasMany = [products:UserProduct]
+
 
     static constraints = {
         firstName nullable: true
         lastName nullable: true
-        emailAddress nullable: false
+        emailAddress nullable: false, unique: true
         loginType nullable: true
-        authToken nullable: false
+        authToken nullable: false, unique: true
         gender nullable: true
+        created nullable: false
+        modified nullable: false
+
     }
 
 }

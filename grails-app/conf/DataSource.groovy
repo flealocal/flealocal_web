@@ -24,7 +24,7 @@ environments {
 
             // Change 'localhostOrDatabaseIpAddress' and 'myDatabaseName'
             // to whatever suits your environment
-            url = "jdbc:mysql://localhost/flealocaldev?useUnicode=yes&characterEncoding=UTF-8"
+            url = "jdbc:mysql://localhost/fleazrdev?useUnicode=yes&characterEncoding=UTF-8"
 
             // Print Hibernate SQL to the console
             logSql = true
