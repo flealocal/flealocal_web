@@ -1,6 +1,9 @@
+import grails.persistence.Entity
+
 /**
  * Created by Nishant on 9/29/14.
  */
+@Entity
 class User {
 
     String firstName
