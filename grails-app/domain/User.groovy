@@ -15,8 +15,7 @@ class User {
     Date created = new Date()
     Date modified = new Date()
 
-    static belongsTo = [Product]
-    static hasMany = [products:UserProduct]
+    static hasMany = [userProduct:UserProduct]
 
 
     static constraints = {

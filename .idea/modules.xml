@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FlealocalAPI.iml" filepath="$PROJECT_DIR$/FlealocalAPI.iml" />
-      <module fileurl="file://$PROJECT_DIR$/FlealocalAPI-grailsPlugins.iml" filepath="$PROJECT_DIR$/FlealocalAPI-grailsPlugins.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flealocal_web.iml" filepath="$PROJECT_DIR$/flealocal_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flealocal_web-grailsPlugins.iml" filepath="$PROJECT_DIR$/flealocal_web-grailsPlugins.iml" />
     </modules>
   </component>
 </project>

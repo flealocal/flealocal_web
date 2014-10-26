@@ -14,13 +14,12 @@ class Product {
     String location
     Long zipcode
     String description
-    Boolean status
+    String status
     Boolean archived
     Date created = new Date()
     Date modified = new Date()
 
-    static belongsTo = [User]
-    static hasMany = [users:UserProduct]
+    static hasMany = [userProduct:UserProduct]
 
     static constraints = {
 

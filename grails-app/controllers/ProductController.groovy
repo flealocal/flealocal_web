@@ -16,10 +16,15 @@ class ProductController {
         def jsonObject = request.JSON.getAt("params")
         Product product = new Product(jsonObject)
         product.save(failOnError: true)
+        def userProductObject  = request.JSON.getAt("user")
+        print(userProductObject)
+        if(userProductObject){
+            def user = User.findById(userProductObject.getAt("UserId"))
+            UserProduct.link(user, product, userProductObject.getAt("type"))
+        }
         withFormat {
             json {render(product as JSON)}
         }
-
     }
 
 
