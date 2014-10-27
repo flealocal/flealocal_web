@@ -1,4 +1,11 @@
 import grails.converters.JSON
+import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestMethod
+import org.springframework.web.multipart.MultipartFile
+import org.springframework.web.multipart.MultipartHttpServletRequest
+
+import javax.servlet.http.HttpServletRequest
+import javax.servlet.http.HttpServletResponse
 
 /**
  * Created by Nishant on 10/11/14.
@@ -26,6 +33,46 @@ class ProductController {
             json {render(product as JSON)}
         }
     }
+
+    @RequestMapping(value = "/storeimages.htm", method = RequestMethod.POST)
+    public void storeimages(HttpServletRequest request, HttpServletResponse response)
+    {
+        try
+        {
+            MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+
+            Set set = multipartRequest.getFileMap().entrySet();
+            Iterator i = set.iterator();
+            while(i.hasNext()) {
+                Map.Entry me = (Map.Entry)i.next();
+                String fileName = (String)me.getKey();
+                MultipartFile multipartFile = (MultipartFile)me.getValue();
+                writeToDisk(fileName, multipartFile);
+            }
+        }
+        catch(Exception ex)
+        {
+            ex.printStackTrace();
+        }
+    }
+
+    public void writeToDisk(String filename, MultipartFile multipartFile)
+    {
+        try
+        {
+            String fullFileName = "/Users/Nishant/IdeaProjects/images" + filename;
+            FileOutputStream fos = new FileOutputStream(fullFileName);
+            fos.write(multipartFile.getBytes());
+            fos.close();
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+        }
+    }
+
+
+
 
 
 }
